@@ -22,5 +22,5 @@ git checkout master
 git pull
 yarn install --frozen-lockfile
 yarn run build
-yarn run start
+pm2 start ecosystem.config.js
 ```
