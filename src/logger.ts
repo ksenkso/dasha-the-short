@@ -6,10 +6,7 @@ const logFormat = winston.format.printf(({ level, message, label, timestamp }) =
 
 const options: LoggerOptions = {
   format: winston.format.combine(winston.format.timestamp(), logFormat),
-  transports:
-    process.env.NODE_ENV === 'production'
-      ? [new winston.transports.File({ filename: 'dasha-the-short.log' })]
-      : [new winston.transports.Console()],
+  transports: [new winston.transports.Console()],
 };
 
 export const logger = winston.createLogger(options);

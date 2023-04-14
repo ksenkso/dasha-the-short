@@ -7,8 +7,6 @@ import { logger } from './logger';
 
 dotenv.config();
 
-console.log(process.env.BOT_TOKEN);
-
 export const dasha = new Telegraf(process.env.BOT_TOKEN as string);
 
 dasha.on(message('entities'), ctx => {
@@ -22,8 +20,14 @@ dasha.on(message('entities'), ctx => {
   });
 });
 
-// const url = 'https://www.youtube.com/shorts/WoWZaEWhplw';
-dasha.launch();
+dasha.launch().catch(err => {
+  logger.log({
+    level: 'error',
+    message: 'Bot did not launch. This happened: ' + JSON.stringify(err),
+  });
+});
+
+logger.info('Bot launched.');
 
 // Enable graceful stop
 process.once('SIGINT', () => dasha.stop('SIGINT'));
