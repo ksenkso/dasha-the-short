@@ -9,13 +9,13 @@ TBD
 First, create a folder on your server:
 
 ```bash
-mkdir -p bash-backend
+mkdir -p dasha-the-short
 ```
 
 Then you can use this script to pull, build and run the bot:
 ```bash
 #!/bin/bash
-cd bash-backend
+cd dasha-the-short
 # git clone https://github.com/ksenkso/dasha-the-short.git .
 git checkout master
 git pull
