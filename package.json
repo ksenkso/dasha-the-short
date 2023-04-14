@@ -2,15 +2,33 @@
   "name": "dasha-the-short",
   "version": "1.0.0",
   "description": "Telegram bot for downloading YouTube Shorts",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "ksenkso",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "telegraf": "^4.12.2"
+    "telegraf": "^4.12.2",
+    "winston": "^3.8.2",
+    "ytdl-core": "^4.11.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "eslint": "^8.38.0",
+    "lint-staged": "^13.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typegram": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --fix",
+    "*.{js,ts}": "prettier --write"
   }
 }
