@@ -36,7 +36,10 @@ server.post<{ Body: { chatAlias: keyof typeof CHATS; text: string } }>(
   },
 );
 
-server.listen(process.env.DASHA_API_PORT);
+server.listen({
+  port: process.env.DASHA_API_PORT,
+  host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost',
+});
 
 dasha.on(message('entities'), ctx => {
   logger.log({
