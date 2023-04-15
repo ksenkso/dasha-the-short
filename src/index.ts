@@ -37,7 +37,7 @@ server.post<{ Body: { chatAlias: keyof typeof CHATS; text: string } }>(
 );
 
 server.listen({
-  port: process.env.DASHA_API_PORT,
+  port: parseInt(process.env.DASHA_API_PORT as string),
   host: process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost',
 });
 
