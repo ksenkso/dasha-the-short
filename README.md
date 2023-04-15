@@ -10,7 +10,8 @@ First, create a folder on your server and export `BOT_TOKEN` environment variabl
 
 ```bash
 mkdir -p dasha-the-short
-export BOT_TOKEN=<YOUR_BOT_TOKEN_HERE>
+export DASHA_BOT_TOKEN=<YOUR_BOT_TOKEN_HERE>
+export DASHA_API_PORT=<YOUR_BOT_TOKEN_HERE>
 ```
 
 Then you can use this script to pull, build and run the bot:

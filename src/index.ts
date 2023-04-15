@@ -9,7 +9,7 @@ import cors from '@fastify/cors';
 
 dotenv.config();
 
-export const dasha = new Telegraf(process.env.BOT_TOKEN as string);
+export const dasha = new Telegraf(process.env.DASHA_BOT_TOKEN as string);
 const server = fastify({ logger: false });
 
 server.register(cors);
@@ -36,7 +36,7 @@ server.post<{ Body: { chatAlias: keyof typeof CHATS; text: string } }>(
   },
 );
 
-server.listen(5000);
+server.listen(process.env.DASHA_API_PORT);
 
 dasha.on(message('entities'), ctx => {
   logger.log({

@@ -5,6 +5,7 @@ module.exports = {
       script: 'dist/index.js',
       env: {
         NODE_ENV: 'production',
+        DASHA_API_PORT: '5000',
       },
     },
   ],
