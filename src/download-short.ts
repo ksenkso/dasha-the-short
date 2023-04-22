@@ -5,7 +5,7 @@ import { logProc } from './logger';
 const log = logProc.bind(null, 'downloadShort');
 
 export const downloadShort = async (ctx: DashaContext, url: string) => {
-  const downloadingStream = ytdl(url);
+  const downloadingStream = ytdl(url, { filter: 'audioandvideo', quality: 'highestvideo' });
   const message = ctx.message;
 
   downloadingStream.on('error', err => {
