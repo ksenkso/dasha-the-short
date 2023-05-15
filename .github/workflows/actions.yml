@@ -1,0 +1,18 @@
+name: deploy-dasha-the-short
+run-name: Deploy Dasha The Short
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run command with SSH
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: "bash ./deploy-dasha-the-short"
