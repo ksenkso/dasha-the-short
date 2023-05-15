@@ -15,4 +15,4 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
-        script: "bash ./deploy-dasha.sh"
+        script: deploy-dasha.sh
