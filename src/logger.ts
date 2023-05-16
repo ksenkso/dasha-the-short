@@ -11,5 +11,5 @@ const options: LoggerOptions = {
 
 export const logger = winston.createLogger(options);
 
-export const logProc = (procName: string, payload: string) =>
+export const logProc = (procName: string, payload: any) =>
   logger.info(payload, { label: procName });

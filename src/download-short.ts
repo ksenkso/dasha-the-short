@@ -9,7 +9,7 @@ export const downloadShort = async (ctx: DashaContext, url: string) => {
   const message = ctx.message;
 
   downloadingStream.on('error', err => {
-    log('Error while downloading a short: ' + JSON.stringify(err));
+    log(err);
   });
 
   const deleteMessageTask = ctx.deleteMessage(message.message_id).catch(err => {

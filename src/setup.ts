@@ -15,7 +15,7 @@ export const onYoutubeShortLink = (ctx: DashaContext, action: (link: string) => 
   const match = ctx.message.text.match(YOUTUBE_SHORT_URL);
 
   if (match) {
-    return action(match[0].substring(1));
+    return action(match[0]);
   } else {
     log('Message did not match the url pattern: ' + ctx.message.text);
   }
