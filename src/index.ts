@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 import { Telegraf } from 'telegraf';
 import { message } from 'telegraf/filters';
 import { downloadShort } from './download-short';
-import { onYoutubeShortLink } from './setup';
+import { onYoutubeShortLink } from './matching';
 import { logger } from './logger';
 import fastify from 'fastify';
 import cors from '@fastify/cors';

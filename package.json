@@ -6,7 +6,10 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "pm2 start ecosystem.config.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "test": "jest dist/tests/*.spec.js",
+    "pretest": "tsc -p tsconfig.tests.json",
+    "test:dev": "jest tests/*.spec.ts"
   },
   "keywords": [],
   "author": "ksenkso",
@@ -21,12 +24,15 @@
     "ytdl-core": "https://github.com/khlevon/node-ytdl-core.git#v4.11.4-patch.1"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.1",
     "@types/node": "^18.15.11",
     "eslint": "^8.38.0",
+    "jest": "^29.5.0",
     "lint-staged": "^13.2.1",
     "nodemon": "^2.0.22",
     "pm2": "^5.3.0",
     "prettier": "^2.8.7",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typegram": "^5.0.0",
     "typescript": "^5.0.4"
