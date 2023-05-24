@@ -1,5 +1,4 @@
-name: deploy-dasha-the-short
-run-name: Deploy Dasha The Short
+name: Deploy
 on:
   push:
     branches:
